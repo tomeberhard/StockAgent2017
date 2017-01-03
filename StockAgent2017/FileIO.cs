@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 using System.Linq;
@@ -105,6 +106,22 @@ namespace StockAgent2017
             }
             return fileList;
         }
+
+        public static List<FileInfo> GetFileList(string path)
+        {
+            List<FileInfo> files = new List<FileInfo>();
+
+            DirectoryInfo dirInfo = new DirectoryInfo(path);
+            FileInfo[] filesArray = dirInfo.GetFiles("*.txt");
+
+            foreach (FileInfo file in filesArray)
+            {
+                files.Add(file);
+            }
+
+            return files;
+        }
+
 
     }
 }

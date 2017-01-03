@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllStocks.cs" />
     <Compile Include="EndOfDayData.cs" />
     <Compile Include="FileIO.cs" />
+    <Compile Include="Screen.cs" />
+    <Compile Include="Stock.cs" />
     <Compile Include="StockAgent2017.cs">
       <SubType>Form</SubType>
     </Compile>

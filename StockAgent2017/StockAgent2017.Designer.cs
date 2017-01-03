@@ -30,13 +30,14 @@
         {
             this.ResultsTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.ScanTabPage = new System.Windows.Forms.TabPage();
+            this.ScreensTabPage = new System.Windows.Forms.TabPage();
             this.RunScan200DMA = new System.Windows.Forms.Button();
             this.RawDataTabPage = new System.Windows.Forms.TabPage();
-            this.DataFolderLabel = new System.Windows.Forms.Label();
             this.DataFolderTextBox = new System.Windows.Forms.TextBox();
+            this.DataFolderLabel = new System.Windows.Forms.Label();
+            this.RunAllScreensButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.ScanTabPage.SuspendLayout();
+            this.ScreensTabPage.SuspendLayout();
             this.RawDataTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.ScanTabPage);
+            this.tabControl1.Controls.Add(this.ScreensTabPage);
             this.tabControl1.Controls.Add(this.RawDataTabPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -59,16 +60,17 @@
             this.tabControl1.Size = new System.Drawing.Size(871, 193);
             this.tabControl1.TabIndex = 1;
             // 
-            // ScanTabPage
+            // ScreensTabPage
             // 
-            this.ScanTabPage.Controls.Add(this.RunScan200DMA);
-            this.ScanTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ScanTabPage.Name = "ScanTabPage";
-            this.ScanTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ScanTabPage.Size = new System.Drawing.Size(863, 167);
-            this.ScanTabPage.TabIndex = 0;
-            this.ScanTabPage.Text = "Scan";
-            this.ScanTabPage.UseVisualStyleBackColor = true;
+            this.ScreensTabPage.Controls.Add(this.RunAllScreensButton);
+            this.ScreensTabPage.Controls.Add(this.RunScan200DMA);
+            this.ScreensTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ScreensTabPage.Name = "ScreensTabPage";
+            this.ScreensTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ScreensTabPage.Size = new System.Drawing.Size(863, 167);
+            this.ScreensTabPage.TabIndex = 0;
+            this.ScreensTabPage.Text = "Screens";
+            this.ScreensTabPage.UseVisualStyleBackColor = true;
             // 
             // RunScan200DMA
             // 
@@ -92,6 +94,14 @@
             this.RawDataTabPage.Text = "Raw Data";
             this.RawDataTabPage.UseVisualStyleBackColor = true;
             // 
+            // DataFolderTextBox
+            // 
+            this.DataFolderTextBox.Location = new System.Drawing.Point(74, 9);
+            this.DataFolderTextBox.Name = "DataFolderTextBox";
+            this.DataFolderTextBox.Size = new System.Drawing.Size(307, 20);
+            this.DataFolderTextBox.TabIndex = 1;
+            this.DataFolderTextBox.Text = "C:\\Users\\Tom\\Downloads\\StockData\\AMEX_all";
+            // 
             // DataFolderLabel
             // 
             this.DataFolderLabel.AutoSize = true;
@@ -101,13 +111,15 @@
             this.DataFolderLabel.TabIndex = 0;
             this.DataFolderLabel.Text = "Data Folder";
             // 
-            // DataFolderTextBox
+            // RunAllScreensButton
             // 
-            this.DataFolderTextBox.Location = new System.Drawing.Point(74, 9);
-            this.DataFolderTextBox.Name = "DataFolderTextBox";
-            this.DataFolderTextBox.Size = new System.Drawing.Size(307, 20);
-            this.DataFolderTextBox.TabIndex = 1;
-            this.DataFolderTextBox.Text = "C:\\Users\\Tom\\Downloads\\StockData\\AMEX_all";
+            this.RunAllScreensButton.Location = new System.Drawing.Point(6, 35);
+            this.RunAllScreensButton.Name = "RunAllScreensButton";
+            this.RunAllScreensButton.Size = new System.Drawing.Size(75, 23);
+            this.RunAllScreensButton.TabIndex = 1;
+            this.RunAllScreensButton.Text = "All Screens";
+            this.RunAllScreensButton.UseVisualStyleBackColor = true;
+            this.RunAllScreensButton.Click += new System.EventHandler(this.RunAllScreensButton_Click);
             // 
             // StockAgent2017
             // 
@@ -119,7 +131,7 @@
             this.Name = "StockAgent2017";
             this.Text = "StockAgent2017";
             this.tabControl1.ResumeLayout(false);
-            this.ScanTabPage.ResumeLayout(false);
+            this.ScreensTabPage.ResumeLayout(false);
             this.RawDataTabPage.ResumeLayout(false);
             this.RawDataTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -131,11 +143,12 @@
 
         private System.Windows.Forms.TextBox ResultsTextBox;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage ScanTabPage;
+        private System.Windows.Forms.TabPage ScreensTabPage;
         private System.Windows.Forms.TabPage RawDataTabPage;
         private System.Windows.Forms.Button RunScan200DMA;
         private System.Windows.Forms.TextBox DataFolderTextBox;
         private System.Windows.Forms.Label DataFolderLabel;
+        private System.Windows.Forms.Button RunAllScreensButton;
     }
 }
 
