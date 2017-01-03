@@ -33,6 +33,7 @@ namespace StockAgent2017
                 sb.AppendLine(fileNames[i].ToString());
             }
 
+
             ResultsTextBox.Text = sb.ToString();
         }
 
