@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections;
+using System.IO;
+
+namespace StockAgent2017
+{
+    /// <summary>
+    /// Class to read text files.
+    /// </summary>
+    class FileIO
+    {
+        /// <summary>
+        /// Gobbles up the whole file as a string.
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <returns></returns>
+        public static string Load(string fullPath)
+        {
+            FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(fs);
+
+            string fileData = reader.ReadToEnd();
+
+            reader.Close();
+            fs.Close();
+
+            return fileData;
+        }
+
+        /// <summary>
+        /// Gobbles up the whole file, returning an ArrayList of the lines.
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <returns></returns>
+        public static ArrayList LoadLines(string fullPath)
+        {
+            ArrayList lines = new ArrayList();
+
+            try
+            {
+                FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(fs);
+
+                while (!reader.EndOfStream)
+                {
+                    lines.Add(reader.ReadLine());
+                }
+                lines.TrimToSize();
+
+                reader.Close();
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                String s = "Exception in FileIO.LoadLines(): " + ex.ToString();
+            }
+
+            return lines;
+        }
+
+        /// <summary>
+        /// Saves the entire string into a file
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <param name="data"></param>
+        public static void Save(string fullPath, string data)
+        {
+            FileStream fs = new FileStream(fullPath, FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fs);
+
+            writer.WriteLine(data);
+
+            writer.Close();
+            fs.Close();
+        }
+    }
+}
+
